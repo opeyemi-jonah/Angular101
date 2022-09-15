@@ -1,0 +1,9 @@
+p{
+
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(13, 13, 13);
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
