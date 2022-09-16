@@ -1,6 +1,8 @@
 <hr>
 <button (click)="blueClass = !blueClass"
-[ngClass]="{ blue: blueClass }">Change</button>
+[ngClass]="{ blue: blueClass }"
+[ngStyle]="{ 'font-size.px': fontSize }"
+>Change</button>
 
 <input (keyup)="changeImage($event)" [value]="imgURL">
 
