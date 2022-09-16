@@ -7,13 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'basics';
-  name: string = 'Opeyemi';
+  name: string = 'opeyemi';
   age: number = 21;
   imgURL = "https://picsum.photos/id/1/200/300";
-  value = '';
+  imgURLTwo = 'https://i.picsum.photos/id/1003/1181/1772.jpg?hmac=oN9fHMXiqe9Zq2RM6XT-RVZkojgPnECWwyEF1RvvTZk';
 
   getName() : string {
-    return this.name;
+    return this.name.concat(' jonah');
   }
 
   getAge(): string {
@@ -22,6 +22,10 @@ export class AppComponent {
   changeImage(e:KeyboardEvent){
     
    this.imgURL = (e.target as HTMLInputElement).value;
+  }
+
+  logImg(event: string){
+    console.log(event);
   }
 
 }

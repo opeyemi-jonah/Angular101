@@ -2,8 +2,8 @@
 
 <!-- <img [src]="imgURL"> -->
 
-<app-post [postImg] = "imgURL"></app-post>
+<app-post [img] = "imgURL" (imgSelected)="logImg($event)"></app-post>
 
-<p>Hello {{getName()}}!</p>
+<p>Hello {{getName() | titlecase}}!</p>
 <p>Hello {{getAge()}}</p>
 
