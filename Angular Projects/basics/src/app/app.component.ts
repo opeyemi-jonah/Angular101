@@ -11,7 +11,10 @@ export class AppComponent {
   name: string = 'opeyemi';
   age: number = 21;
   imgURL = "https://picsum.photos/id/1/200/300";
-  imgURLTwo = 'https://i.picsum.photos/id/1003/1181/1772.jpg?hmac=oN9fHMXiqe9Zq2RM6XT-RVZkojgPnECWwyEF1RvvTZk';
+  images = ['https://picsum.photos/id/1/200/300',
+  'https://picsum.photos/id/2/200/300',
+  'https://picsum.photos/id/3/200/300'
+];
   currentDate = new Date();
   blueClass = false;
   fontSize = 16;

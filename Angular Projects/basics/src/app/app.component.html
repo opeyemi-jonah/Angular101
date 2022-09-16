@@ -1,16 +1,18 @@
-<hr>
+<p *ngIf="blueClass">Button is {{blueClass.toString().concat(' blue')}}</p>
+
 <button (click)="blueClass = !blueClass"
 [ngClass]="{ blue: blueClass }"
 [ngStyle]="{ 'font-size.px': fontSize }"
 >Change</button>
 
+<hr>
+
 <input (keyup)="changeImage($event)" [value]="imgURL">
-
-<!-- <img [src]="imgURL"> -->
-
-<app-post [img] = "imgURL" (imgSelected)="logImg($event)"></app-post>
 
 <p>Hello {{getName() | titlecase}}!</p>
 <p>Hello I am {{getAge()}}</p>
 <p>{{currentDate | date: 'MM/d/YY'}}</p>
-
+<app-post *ngFor="let image of images; let i = index" [img] = "image" (imgSelected)="logImg($event)">
+    <p>{{ i }}Some caption</p>
+    <h1>{{i}}</h1>
+</app-post>
