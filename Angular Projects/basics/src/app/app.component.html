@@ -1,3 +1,7 @@
+<hr>
+<button (click)="blueClass = !blueClass"
+[ngClass]="{ blue: blueClass }">Change</button>
+
 <input (keyup)="changeImage($event)" [value]="imgURL">
 
 <!-- <img [src]="imgURL"> -->
@@ -5,5 +9,6 @@
 <app-post [img] = "imgURL" (imgSelected)="logImg($event)"></app-post>
 
 <p>Hello {{getName() | titlecase}}!</p>
-<p>Hello {{getAge()}}</p>
+<p>Hello I am {{getAge()}}</p>
+<p>{{currentDate | date: 'MM/d/YY'}}</p>
 
