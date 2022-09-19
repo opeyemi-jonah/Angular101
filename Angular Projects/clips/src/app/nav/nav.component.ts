@@ -15,7 +15,7 @@ export class NavComponent implements OnInit {
 
   openModal($event: Event) {
     $event.preventDefault()
-    this.modal.toggelModal()
+    this.modal.toggelModal('auth')
   }
 
  
