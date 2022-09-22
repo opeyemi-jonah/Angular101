@@ -11,9 +11,14 @@ export class LoginComponent implements OnInit {
     password: ''
   }
   emailRegex = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+  passwordRegex ="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm"
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  login() {
+    console.log(this.crendentials)
   }
 
 }
