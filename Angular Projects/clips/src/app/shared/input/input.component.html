@@ -22,11 +22,14 @@
     <p *ngIf="control.errors?.max" class="text-red-400">
         You are above the age range.
     </p>
-    <p class="text-red-400" *ngIf=""control.errors?.patern>
+    <p class="text-red-400" *ngIf=""control.errors?.pattern>
         Password must be at least 8 characters long
 <br>- must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number
 <br>- Can contain special characters
     </p>
+    <p *ngIf="control.errors?.noMatch" class="text-red-400">
+      Password do not match.
+  </p>
 </ng-container>
 
   
