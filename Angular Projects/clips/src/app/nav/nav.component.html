@@ -2,7 +2,7 @@
 <header id="header" class="bg-secondary">
     <nav class="container mx-auto flex justify-start items-center py-8 px-4">
       <!-- App Name -->
-      <a class="text-3xl text-indigo-400 font-bold uppercase mr-4" href="index.html">Clipz</a>
+      <a class="text-3xl text-indigo-400 font-bold uppercase mr-4" routerLink="/">Clipz</a>
   
       <div class="flex flex-grow items-center">
         <!-- Primary Navigation -->
@@ -14,18 +14,19 @@
 
           <ng-template #authLinks>
             <li>
-              <a class="px-2" href="#">Manage</a>
+              <a class="px-2" routerLink="#">Manage</a>
             </li>
             <li>
-              <a class="px-2" href="#">Upload</a>
+              <a class="px-2" routerLink="#">Upload</a>
             </li>
             <li>
               <a class="px-2" (click)="logout($event)">Logout</a>
             </li>
           </ng-template>
 
-          <li>
-             <a class="px-2" href="about.html">About</a>
+          <li routerLinkActive="text-indigo-400">
+             <a class="px-2" routerLink="/about"
+             routerLinkActive="text-indigo-400" [routerLinkActiveOptions]="{exact: true}" >About</a>
            </li>
           
         </ul>
@@ -39,7 +40,7 @@
             </a>
           </li>
           <li style="display: none;">
-            <a href="#">
+            <a routerLink="#">
               <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABDBAMAAACYZb3pAAAAHlBMVEUpQqK2q8384OL3qa/tKTkAI5Wrt9z////5t7ztKTlzpJCAAAAABXRSTlP++vjs1BQWlgsAAAAxSURBVHgBYmRAA4yKaAJCAugqQgHtyzENAAAAAiD7pzaDr4MfRVEURVGU36IoipK5FLWNJ6UFusbWAAAAAElFTkSuQmCC" 
                 alt="fr" width="22" height="14" class="inline-block">
                 <span class="ml-1">French</span>
