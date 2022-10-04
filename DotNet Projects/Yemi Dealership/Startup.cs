@@ -1,6 +1,7 @@
 ﻿using Yemi_Dealership.AppDBContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.SqlServer;
+using Microsoft.Extensions.FileSystemGlobbing.Internal.Patterns;
 
 public class Startup
 {
@@ -33,7 +34,16 @@ public class Startup
 
         app.UseAuthorization();
 
+        //Convention Based Routing
+        /**
         app.MapControllerRoute(
+            name: "ByYearMonth",
+            pattern: "make/bikes/{year:int:length(4)}/{month:int:range(1,12)}",
+            new { controller = "make", action = "ByYearMonth" }
+            );
+        */
+
+        app.MapControllerRoute( 
             name: "default",
             pattern: "{controller=Home}/{action=Index}/{id?}");
 
