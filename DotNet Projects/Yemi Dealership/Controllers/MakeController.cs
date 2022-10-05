@@ -51,6 +51,7 @@ namespace Yemi_Dealership.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
         //Http Get Method
         public IActionResult Edit(int id)
         {
@@ -61,6 +62,7 @@ namespace Yemi_Dealership.Controllers
             }
             return View(make);
         }
+
 
         [HttpPost]
         public IActionResult Edit(Make make)
@@ -74,6 +76,30 @@ namespace Yemi_Dealership.Controllers
             return View(make);
         }
 
+
+        [HttpPost]
+        public IActionResult Jot(Make make)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Update(make);
+                _db.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(make);
+        }
+
+
+        public IActionResult Jot(int id)
+        {
+
+            var make = _db.Makes.Find(id);
+            if (make == null)
+            {
+                return NotFound();
+            }
+            return View(make);
+        }
 
     }
 }
