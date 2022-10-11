@@ -77,29 +77,7 @@ namespace Yemi_Dealership.Controllers
         }
 
 
-        [HttpPost]
-        public IActionResult Jot(Make make)
-        {
-            if (ModelState.IsValid)
-            {
-                _db.Update(make);
-                _db.SaveChanges();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(make);
-        }
-
-
-        public IActionResult Jot(int id)
-        {
-
-            var make = _db.Makes.Find(id);
-            if (make == null)
-            {
-                return NotFound();
-            }
-            return View(make);
-        }
+        
 
     }
 }
