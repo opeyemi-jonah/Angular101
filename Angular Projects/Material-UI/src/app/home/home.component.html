@@ -10,7 +10,25 @@
     </button>
 
   </div>
+<mat-tab-group>
 
+  <mat-tab label="Beginners">
+
+    <courses-card-list [courses]="beginnerCourses$ | async">
+
+    </courses-card-list>
+    
+  </mat-tab>
+  
+  <mat-tab label="Advance">
+    
+    <courses-card-list [courses]="advancedCourses$ | async">
+
+    </courses-card-list>
+    
+  </mat-tab>
+
+</mat-tab-group>
 
 </div>
 

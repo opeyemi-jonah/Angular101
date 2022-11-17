@@ -10,16 +10,18 @@ import {Lesson} from "../model/lesson";
 
 @Injectable()
 export class CoursesService {
-
+   
     constructor(private http:HttpClient) {
-
+        
     }
 
     findCourseById(courseId: number): Observable<Course> {
+        
         return this.http.get<Course>(`/api/courses/${courseId}`);
     }
 
     findAllCourses(): Observable<Course[]> {
+        console.log(this.http.get)
         return this.http.get('/api/courses')
             .pipe(
                 map(res => res['payload'])
