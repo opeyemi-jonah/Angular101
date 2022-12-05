@@ -13,6 +13,7 @@ export class ClipComponent implements OnInit {
   constructor(public route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log('HEELLLOOO')
     this.route.params.subscribe((params: Params) => {
       this.id = params.id
     })
