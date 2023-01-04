@@ -13,6 +13,12 @@ export class UploadComponent implements OnInit {
   isFormVisible = false;
   file: File | null = null;
 
+  alertColor = 'blue'
+  showAlert = false
+  alertMsg = 'Please wait! your clip is being uploaded'
+  inSubmission = false;
+  percentage = 0
+
   constructor(private storage: AngularFireStorage) { }
 
   ngOnInit(): void {
@@ -47,10 +53,20 @@ export class UploadComponent implements OnInit {
   }
 
   uploadFile() {
+    this.showAlert = true;
+    this.alertColor = 'blue'
+    this.alertMsg = 'Please wait! your clip is being uploaded'
+    this.inSubmission = true
+
     const clipFileName = uuid()
     const clipPath = `clips/${clipFileName}.mp4`
 
-    this.storage.upload(clipPath, this.file)
+    const task = this.storage.upload(clipPath, this.file)
+    task.percentageChanges().subscribe(
+      progress => {
+        this.percentage = progress as number / 100
+      }
+    )
     
   }
 }
